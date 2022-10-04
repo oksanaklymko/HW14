@@ -1,0 +1,286 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  //font-family: ;
+  font-size: $base-font-size;
+  color: $dark-gray;
+  font-family: $base-family;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 66px;
+  color: $gold;
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  color: $gray;
+  margin: 0 0 30px;
+  position: relative;
+  padding-bottom: 30px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $gold;
+    height: 1px;
+  }
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: $gray;
+  margin: 30px 0;
+}
+
+p {
+  font-weight: 500;
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  padding: 0 10px;
+
+}
+
+.btn {
+  @include animate(background-color, 0.3s, ease);
+  display: inline-block;
+  border: 1px solid $gold;
+  color: $gray;
+  background-color: $white;
+  font-weight: 700;
+  //font-family: ;
+  padding: 5px 10px;
+  text-decoration: none;
+  align-items: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $gold;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 121px auto;
+  width: 100%;
+
+  .title-holder {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .pseudo-title {
+    //font-family: ;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #898F8F;
+    padding-bottom: 15px;
+  }
+}
+
+.icon-holder {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+
+  .icon-bonfire-sharp-1 {
+    color: $gold;
+    text-align: center;
+    padding: 0 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    top: 50%;
+    right: calc(50% + 10px);
+    width: 100%;
+    max-width: 210px;
+    border: 1px solid  $gold;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    top: 50%;
+    left: calc(50% + 10px);
+    width: 100%;
+    max-width: 210px;
+    border: 1px solid  $gold;
+  }
+
+}
+
+.text-section {
+  .flex-container {
+    @include flex(flex-start, space-between);
+    position: relative;
+    padding: 85px 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: $gold;
+    }
+  }
+}
+
+.image-holder {
+  width: 400px;
+  height: 400px;
+  border: 1px solid $gold;
+}
+
+.image-holder-main {
+  position: relative;
+  padding: 15px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  &:before {
+    left: 0;
+    border-bottom: 1px solid $gold;
+    border-left: 1px solid $gold;
+  }
+
+  &:after {
+    right: 0;
+    border-bottom: 1px solid $gold;
+    border-right: 1px solid $gold;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+
+    &.top-left {
+      left: 0;
+      border-top: 1px solid $gold;
+      border-left: 1px solid $gold;
+    }
+
+    &.top-right {
+      right: 0;
+      border-top: 1px solid $gold;
+      border-right: 1px solid $gold;
+    }
+  }
+}
+
+.text {
+  text-align: center;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 50%;
+  flex: 1 auto;
+
+  .text-wrap {
+    max-width: 430px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .socials-holder {
+    list-style: none;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+
+    .social-items {
+      position: relative;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      background: $white;
+      border: 2px solid #CCCCCC;
+      border-radius: 50%;
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+      @include animate(color, 0.3s, linear);
+
+      &:hover {
+        background-color: $gold;
+      }
+    }
+  }
+
+  .text-border {
+    display: block;
+    height: 4px;
+    background: $gold;
+    max-width: 20px;
+    width: 100%;
+    margin: 0 auto 30px;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      max-width: 10px;
+      height: 4px;
+      background-color: $gold;
+
+    }
+
+    &:before {
+      right: calc(100% + 5px);
+    }
+
+    &:after {
+      left: calc(100% + 5px);
+    }
+  }
+}
+
+
+
